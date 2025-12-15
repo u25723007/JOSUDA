@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="JOSUDA (Pty) Ltd — Agent of Foreign Firms in Lesotho. Professional market representation, sales & marketing, distribution coordination, tender facilitation, and after-sales support." />
+  <title>JOSUDA (Pty) Ltd | Agent of Foreign Firms — Lesotho</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f1a33;
+      --muted:#9fb0d0;
+      --text:#e8efff;
+      --brand:#4f8cff;
+      --brand2:#26d3a3;
+      --line:rgba(255,255,255,.10);
+      --shadow: 0 18px 60px rgba(0,0,0,.35);
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 10% 0%, rgba(79,140,255,.22), transparent 60%),
+        radial-gradient(700px 500px at 90% 10%, rgba(38,211,163,.18), transparent 60%),
+        linear-gradient(180deg, #070b14 0%, var(--bg) 100%);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:24px}
+
+    /* Top bar */
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter: blur(10px);
+      background: rgba(11,18,32,.65);
+      border-bottom: 1px solid var(--line);
+    }
+    .top{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px;
+      padding:14px 24px;
+      max-width:var(--max);
+      margin:0 auto;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+      font-weight:800; letter-spacing:.2px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: var(--shadow);
+      display:grid; place-items:center;
+      font-weight:900;
+    }
+    nav{display:flex; gap:14px; align-items:center}
+    nav a{
+      color: var(--muted);
+      font-weight:600;
+      padding:10px 10px;
+      border-radius:12px;
+      transition: .2s ease;
+    }
+    nav a:hover{color:var(--text); background:rgba(255,255,255,.06)}
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:11px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      color: var(--text);
+      font-weight:700;
+      cursor:pointer;
+      transition:.2s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.07)}
+    .btn.primary{
+      border:none;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 14px 40px rgba(79,140,255,.18);
+    }
+
+    /* Hero */
+    .hero{
+      padding:44px 0 18px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:24px;
+      align-items:stretch;
+    }
+    .card{
+      background: rgba(15,26,51,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero .left{padding:28px}
+    .kicker{
+      display:inline-flex; gap:8px; align-items:center;
+      color: var(--muted);
+      font-weight:700;
+      border:1px solid var(--line);
+      padding:8px 12px;
+      border-radius:999px;
+      background: rgba(255,255,255,.03);
+    }
+    h1{margin:14px 0 8px; font-size: 44px; line-height:1.08}
+    .sub{color:var(--muted); font-size: 17px; line-height:1.6; margin:0 0 18px}
+    .hero-actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px}
+    .pill{
+      border:1px solid var(--line);
+      padding:10px 12px;
+      border-radius:999px;
+      color: var(--muted);
+      background: rgba(255,255,255,.02);
+      font-weight:700;
+    }
+
+    .hero .right{padding:18px; display:grid; gap:12px}
+    .stat{padding:16px; border-radius:16px; border:1px solid var(--line); background: rgba(255,255,255,.03)}
+    .stat b{display:block; font-size: 15px; margin-bottom:6px}
+    .stat span{color:var(--muted); font-size: 14px; line-height:1.45}
+
+    /* Sections */
+    section{padding:18px 0}
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between;
+      gap:16px;
+      margin: 14px 0 12px;
+    }
+    .section-title h2{margin:0; font-size: 24px}
+    .section-title p{margin:0; color:var(--muted)}
+
+    .grid-3{display:grid; grid-template-columns: repeat(3, 1fr); gap:14px}
+    .grid-2{display:grid; grid-template-columns: repeat(2, 1fr); gap:14px}
+
+    .tile{padding:18px}
+    .tile h3{margin:0 0 8px; font-size: 16px}
+    .tile p{margin:0; color:var(--muted); line-height:1.6; font-size: 14.5px}
+
+    /* Contact */
+    .contact{
+      display:grid; grid-template-columns: 1fr 1fr; gap:14px;
+      align-items:stretch;
+    }
+    .contact .tile{height:100%}
+    label{display:block; font-size: 13px; color: var(--muted); margin: 10px 0 6px}
+    input, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+    .form-row{display:grid; grid-template-columns:1fr 1fr; gap:10px}
+
+    footer{
+      border-top:1px solid var(--line);
+      margin-top:18px;
+      padding:22px 0 34px;
+      color: var(--muted);
+      font-size: 13.5px;
+    }
+    .foot{display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap}
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr;}
+      h1{font-size: 38px}
+      .grid-3{grid-template-columns:1fr;}
+      .grid-2{grid-template-columns:1fr;}
+      .contact{grid-template-columns:1fr;}
+      nav{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="top">
+      <a class="brand" href="#home" aria-label="JOSUDA home">
+        <div class="logo">J</div>
+        <div>
+          <div style="font-size:14px; opacity:.9;">JOSUDA (Pty) Ltd</div>
+          <div style="font-size:12px; color:var(--muted); font-weight:700;">Agent of Foreign Firms • Lesotho</div>
+        </div>
+      </a>
+
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#partners">Partnerships</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="cta">
+        <a class="btn" href="tel:+26658722027">Call</a>
+        <a class="btn primary" href="#contact">Request a Partnership</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="home">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card left">
+        <div class="kicker">Market Representation • Sales Enablement • Tender Facilitation</div>
+        <h1>Professional representation for foreign firms entering the Lesotho market.</h1>
+        <p class="sub">
+          JOSUDA is a local agency and market facilitator based in Maseru. We promote, market, and coordinate distribution for reputable international suppliers, while supporting after-sales service, compliance, and market intelligence.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#contact">Talk to Us</a>
+          <a class="btn" href="#services">Explore Services</a>
+          <span class="pill">Reg. No: A2023/29354</span>
+        </div>
+      </div>
+
+      <div class="card right">
+        <div class="stat">
+          <b>Local market expertise</b>
+          <span>Deep understanding of procurement processes, distributor networks, and business conditions in Lesotho.</span>
+        </div>
+        <div class="stat">
+          <b>Commercial & logistics support</b>
+          <span>Import coordination, distribution guidance, and partner-ready reporting to enable smoother market entry.</span>
+        </div>
+        <div class="stat">
+          <b>Reliable representation</b>
+          <span>Transparent, professional engagement with retailers, contractors, and institutions.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="section-title">
+        <h2>Core Services</h2>
+        <p>End-to-end support for market entry and growth.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card tile">
+          <h3>Sales & Marketing Agency</h3>
+          <p>Acting as the local sales and marketing agent for foreign manufacturers and suppliers, driving demand and supporting route-to-market strategies.</p>
+        </div>
+        <div class="card tile">
+          <h3>Distribution & Import Facilitation</h3>
+          <p>Supporting importation and distribution coordination, with guidance on local requirements and documentation.</p>
+        </div>
+        <div class="card tile">
+          <h3>Tender Participation Support</h3>
+          <p>Assisting partners to identify relevant opportunities and participate in public and private procurement processes.</p>
+        </div>
+        <div class="card tile">
+          <h3>Market Research & Intelligence</h3>
+          <p>Researching demand, pricing, competitors, and buyer profiles to help partners make confident, data-informed decisions.</p>
+        </div>
+        <div class="card tile">
+          <h3>After-Sales & Customer Support</h3>
+          <p>Coordinating customer care and after-sales support to protect brand reputation and strengthen buyer trust.</p>
+        </div>
+        <div class="card tile">
+          <h3>Brand Promotion</h3>
+          <p>Representing partner brands at trade fairs, exhibitions, and industry engagements for stronger visibility and lead generation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- INDUSTRIES -->
+    <section id="industries">
+      <div class="section-title">
+        <h2>Target Industries</h2>
+        <p>Where we can activate partnerships quickly.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card tile">
+          <h3>Construction & Building Materials</h3>
+          <p>Including roofing products (e.g., corrugated iron sheets), building materials, and contractor supply chains.</p>
+        </div>
+        <div class="card tile">
+          <h3>Hardware, Engineering & Industrial Supply</h3>
+          <p>Tools, industrial equipment, electrical and plumbing supplies for retailers, contractors, and facilities.</p>
+        </div>
+        <div class="card tile">
+          <h3>Government & Private Procurement</h3>
+          <p>Support for partners targeting institutional buyers, tender-driven procurement, and bulk purchase channels.</p>
+        </div>
+        <div class="card tile">
+          <h3>Agricultural Machinery & Inputs</h3>
+          <p>Machinery and inputs that enable productivity for farms, cooperatives, and agri-supply distributors.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTNERSHIPS -->
+    <section id="partners">
+      <div class="section-title">
+        <h2>Partnership Opportunities</h2>
+        <p>We collaborate with manufacturers and exporters.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card tile">
+          <h3>What we look for</h3>
+          <p>
+            Reliable manufacturers/exporters with consistent supply, clear product specifications, and a commitment to quality, compliance, and customer satisfaction.
+          </p>
+          <p style="margin-top:10px;">
+            <span class="pill">Construction materials</span>
+            <span class="pill">Electrical & plumbing</span>
+            <span class="pill">Industrial tools</span>
+            <span class="pill">Agriculture</span>
+          </p>
+        </div>
+        <div class="card tile">
+          <h3>How we add value</h3>
+          <p>
+            Local representation and lead generation, market intelligence, import/distribution coordination, and after-sales support—helping partners enter the market faster and operate with confidence.
+          </p>
+          <p style="margin-top:10px; color:var(--muted); font-weight:700;">
+            Note: If you have a product catalogue (PDF) and price list, we can review it and recommend a route-to-market plan.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-title">
+        <h2>About JOSUDA</h2>
+        <p>Trusted local presence in Maseru.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card tile">
+          <h3>Our Mission</h3>
+          <p>To connect international businesses with the Lesotho market through professional representation, trusted partnerships, and efficient market penetration strategies that create sustainable value for all stakeholders.</p>
+        </div>
+        <div class="card tile">
+          <h3>Our Vision</h3>
+          <p>To become a leading trade and agency representation company in the region, recognized for linking global suppliers with local distributors, contractors, and end-users.</p>
+        </div>
+        <div class="card tile">
+          <h3>Competitive Advantage</h3>
+          <p>Strong local relationships with hardware retailers, contractors, and institutions; deep procurement knowledge; proven sales capability; and a commitment to transparency and ethical business practices.</p>
+        </div>
+        <div class="card tile">
+          <h3>Company Details</h3>
+          <p>
+            <b>Registration:</b> A2023/29354<br>
+            <b>Address:</b> Maseru West, Pela IEC, 251 Street, Maseru<br>
+            <b>Telephone:</b> +266 5872 2027 / +266 6262 7423<br>
+            <b>Email:</b> mehlalamatseliso@gmail.com
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-title">
+        <h2>Contact</h2>
+        <p>Let’s discuss representation, distribution, or tender support.</p>
+      </div>
+
+      <div class="contact">
+        <div class="card tile">
+          <h3>Contact Person</h3>
+          <p>
+            <b>Matseliso Johanna Mehlala</b><br>
+            Managing Director / Authorized Representative
+          </p>
+          <p style="margin-top:10px;">
+            <b>Phone:</b> <a href="tel:+26658722027">+266 5872 2027</a> / <a href="tel:+26662627423">+266 6262 7423</a><br>
+            <b>Email:</b> <a href="mailto:mehlalamatseliso@gmail.com">mehlalamatseliso@gmail.com</a>
+          </p>
+          <p style="margin-top:10px; color:var(--muted)">
+            <b>Office:</b> Maseru West, Pela IEC, 251 Street, Maseru
+          </p>
+          <a class="btn primary" style="margin-top:14px" href="mailto:mehlalamatseliso@gmail.com?subject=Partnership%20Request%20-%20JOSUDA&body=Hello%20JOSUDA%2C%0A%0AI%20would%20like%20to%20discuss%20a%20potential%20partnership%20for%20market%20representation%20in%20Lesotho.%0A%0ACompany%3A%0AProducts%3A%0AWebsite%3A%0A%0AThank%20you%2C">Email Partnership Request</a>
+        </div>
+
+        <div class="card tile">
+          <h3>Send a Message</h3>
+          <form id="contactForm">
+            <div class="form-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" required placeholder="Your full name" />
+              </div>
+              <div>
+                <label for="company">Company</label>
+                <input id="company" name="company" placeholder="Company / Organization" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required placeholder="name@company.com" />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" placeholder="+country code" />
+              </div>
+            </div>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us about your products, goals, and how you’d like to work with JOSUDA."></textarea>
+
+            <button class="btn primary" type="submit" style="margin-top:12px">Send via Email</button>
+            <p style="margin:10px 0 0; color:var(--muted); font-size:13px; line-height:1.5">
+              This form opens your email client (no website backend needed). If you want the form to submit online, we can connect it to a free form service or your hosting email.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="foot">
+        <div>
+          <b>JOSUDA (Pty) Ltd</b> — Agent of Foreign Firms in Lesotho<br>
+          Registration No: A2023/29354
+        </div>
+        <div>
+          Maseru West, Pela IEC, 251 Street • <a href="tel:+26658722027">+266 5872 2027</a> • <a href="mailto:mehlalamatseliso@gmail.com">mehlalamatseliso@gmail.com</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Contact form: opens a pre-filled email (no backend required)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const name = encodeURIComponent(data.get('name') || '');
+      const company = encodeURIComponent(data.get('company') || '');
+      const email = encodeURIComponent(data.get('email') || '');
+      const phone = encodeURIComponent(data.get('phone') || '');
+      const message = encodeURIComponent(data.get('message') || '');
+
+      const subject = `Website Enquiry - JOSUDA - ${decodeURIComponent(name)}`;
+      const body =
+`Hello JOSUDA,\n\n`+
+`Name: ${decodeURIComponent(name)}\n`+
+`Company: ${decodeURIComponent(company)}\n`+
+`Email: ${decodeURIComponent(email)}\n`+
+`Phone: ${decodeURIComponent(phone)}\n\n`+
+`Message:\n${decodeURIComponent(message)}\n\n`+
+`Regards,\n${decodeURIComponent(name)}`;
+
+      const mailto = `mailto:mehlalamatseliso@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+    });
+  </script>
+</body>
+</html>
